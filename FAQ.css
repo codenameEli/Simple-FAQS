@@ -1,0 +1,142 @@
+.faqs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 0 120px;
+    z-index: 10;
+}
+
+.faq {
+    width: 990px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: #FFF;
+    box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    margin: 0 0 20px;
+    position: relative;
+    transition: max-height 599ms ease;
+    cursor: pointer;
+}
+
+.faq.faq--active .faq__answer {
+    opacity: 1;
+}
+
+.faq.faq--active .faq__icon {
+    top: 38px;
+    width: 21px;
+    height: 3px;
+    background-image: url(./icon-close.svg);
+}
+
+.faq__icon {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 21px;
+    height: 21px;
+    background-image: url(./icon-open.svg);
+}
+
+.faq__question {
+    color: #080808;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 26px;
+    padding: 30px 30px 30px 30px;
+}
+
+.faq__question:before {
+    content: "• ";
+    margin-right: 0.25em;
+}
+
+.faq__answer {
+    color: #868787;
+    font-size: 16px;
+    line-height: 26px;
+    padding: 0 60px 30px 60px;
+    opacity: 0;
+    transition: all 300ms ease 300ms;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    top: auto;
+}
+
+.faq__answer strong {
+    font-weight: bold;
+    color: #080808;
+}
+
+.faq__answer p {
+    color: inherit;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    clear: both;
+}
+
+.faq__answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq__answer a {
+    display: inline-block;
+}
+
+.faq__answer a img.alignnone {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.faq__answer iframe {
+    height: 118px;
+    width: 210px;
+    margin-top: 10px;
+}
+
+.faq__answer a[data-fancybox][href*="youtube"] {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+}
+
+.page-template-page-faq .impact__body p {
+    color: #868787;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .faq {
+        width: 750px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq {
+        width: 90%;
+        padding-right: 60px;
+    }
+
+    .faq__answer {
+        max-width: 100%;
+        padding: 0 30px 30px 30px;
+    }
+}
+
+.page-template-page-faq .fancybox-slide--video .fancybox-content,
+.page-template-page-faq .fancybox-slide--video .fancybox-iframe {
+    max-height: 70vh;
+    max-width: 990px;
+}
